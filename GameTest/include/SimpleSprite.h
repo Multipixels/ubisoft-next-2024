@@ -5,7 +5,7 @@
 #ifndef _SIMPLESPRITE_H_
 #define _SIMPLESPRITE_H_
 
-#include "../glut/include/GL/freeglut.h"
+#include "../external/glut/include/GL/freeglut.h"
 #include <map>
 #include <vector>
 

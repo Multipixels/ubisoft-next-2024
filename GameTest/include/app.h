@@ -6,7 +6,7 @@
 //---------------------------------------------------------------------------------
 #include <windows.h> 
 //---------------------------------------------------------------------------------
-#include "../glut/include/GL/freeglut.h"
+#include "GL/freeglut.h"
 #include "AppSettings.h"
 #include "SimpleController.h"
 #include "SimpleSprite.h"

@@ -76,7 +76,7 @@ public:
 	void Print(float x, float y, const char *text)
 	{
 		char textBuffer[64];
-		sprintf(textBuffer, "%s: %0.4f ms", text,m_elapsedTime);
+		//sprintf(textBuffer, "%s: %0.4f ms", text,m_elapsedTime);
 		App::Print(x, y, textBuffer,1.0f,0.0f,1.0f, GLUT_BITMAP_HELVETICA_10);
 	}
 private:	

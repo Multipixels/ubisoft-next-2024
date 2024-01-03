@@ -1,16 +1,16 @@
 //------------------------------------------------------------------------
-// GameTest.cpp
+// Game.cpp
 //------------------------------------------------------------------------
-#include "stdafx.h"
+#include <stdafx.h>
 //------------------------------------------------------------------------
 #include <windows.h> 
 #include <math.h>  
 //------------------------------------------------------------------------
-#include "app\app.h"
+#include <app.h>
 //------------------------------------------------------------------------
 
 //------------------------------------------------------------------------
-// Eample data....
+// Example data....
 //------------------------------------------------------------------------
 CSimpleSprite *testSprite;
 enum
@@ -29,7 +29,7 @@ void Init()
 {
 	//------------------------------------------------------------------------
 	// Example Sprite Code....
-	testSprite = App::CreateSprite(".\\TestData\\Test.bmp", 8, 4);
+	testSprite = App::CreateSprite(".\\assets\\Test.bmp", 8, 4);
 	testSprite->SetPosition(400.0f, 400.0f);
 	float speed = 1.0f / 15.0f;
 	testSprite->CreateAnimation(ANIM_BACKWARDS, speed, { 0,1,2,3,4,5,6,7 });
@@ -106,7 +106,7 @@ void Update(float deltaTime)
 	//------------------------------------------------------------------------
 	if (App::GetController().CheckButton(XINPUT_GAMEPAD_B, true))
 	{
-		App::PlaySound(".\\TestData\\Test.wav");
+		App::PlaySound(".\\assets\\Test.wav");
 	}
 }
 
@@ -129,7 +129,7 @@ void Render()
 	//------------------------------------------------------------------------
 	// Example Line Drawing.
 	//------------------------------------------------------------------------
-	static float a = 0.0f;
+	/* static float a = 0.0f;
 	float r = 1.0f;
 	float g = 1.0f;
 	float b = 1.0f;
@@ -144,7 +144,7 @@ void Render()
 		g = (float)i / 20.0f;
 		b = (float)i / 20.0f;
 		App::DrawLine(sx, sy, ex, ey,r,g,b);
-	}
+	} */
 }
 //------------------------------------------------------------------------
 // Add your shutdown code here. Called when the APP_QUIT_KEY is pressed.
@@ -154,6 +154,6 @@ void Shutdown()
 {	
 	//------------------------------------------------------------------------
 	// Example Sprite Code....
-	delete testSprite;
+	// delete testSprite;
 	//------------------------------------------------------------------------
 }
