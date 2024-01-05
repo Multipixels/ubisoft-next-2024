@@ -93,7 +93,8 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>.\glut;$(IncludePath)</IncludePath>
     <LibraryPath>.\glut\lib\x64;$(LibraryPath)</LibraryPath>
-    <OutDir>$(ProjectDir)builds\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>temp\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -180,7 +181,7 @@
       <AdditionalLibraryDirectories>$(ProjectDir)external\glut\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(SolutionDir)\GameTest\glut\bin\x64\*.dll $(OutputPath) /Y</Command>
+      <Command>xcopy "$(ProjectDir)external\glut\bin\x64\*.dll" "$(OutputPath)" /Y</Command>
     </PostBuildEvent>
     <ProjectReference>
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
@@ -203,7 +204,6 @@
     <ClCompile Include="src\SimpleController.cpp" />
     <ClCompile Include="src\SimpleSound.cpp" />
     <ClCompile Include="src\SimpleSprite.cpp" />
-    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="external\stb_image\stb_image.cpp" />
     <ClCompile Include="include\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
