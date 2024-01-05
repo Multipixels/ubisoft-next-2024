@@ -23,6 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GameTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>GameEngine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -39,13 +40,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -79,7 +80,8 @@
     <IncludePath>.\glut;$(IncludePath)</IncludePath>
     <LibraryPath>.\glut\lib\x64;$(LibraryPath)</LibraryPath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>temp\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -91,7 +93,7 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>.\glut;$(IncludePath)</IncludePath>
     <LibraryPath>.\glut\lib\x64;$(LibraryPath)</LibraryPath>
-    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)builds\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -130,7 +132,7 @@
       <AdditionalLibraryDirectories>$(ProjectDir)external\glut\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)\GameTest\external\glut\bin\x64\*.dll" "$(OutputPath)" /Y</Command>
+      <Command>xcopy "$(ProjectDir)external\glut\bin\x64\*.dll" "$(OutputPath)" /Y</Command>
     </PostBuildEvent>
     <ProjectReference>
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
@@ -184,9 +186,6 @@
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\app.h" />
     <ClInclude Include="include\AppSettings.h" />
