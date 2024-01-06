@@ -188,23 +188,23 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="external\stb_image\stb_image.h" />
     <ClInclude Include="include\app.h" />
     <ClInclude Include="include\AppSettings.h" />
     <ClInclude Include="include\main.h" />
     <ClInclude Include="include\SimpleController.h" />
     <ClInclude Include="include\SimpleSound.h" />
     <ClInclude Include="include\SimpleSprite.h" />
-    <ClInclude Include="external\stb_image\stb_image.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="external\stb_image\stb_image.cpp" />
     <ClCompile Include="src\app.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\SimpleController.cpp" />
     <ClCompile Include="src\SimpleSound.cpp" />
     <ClCompile Include="src\SimpleSprite.cpp" />
-    <ClCompile Include="external\stb_image\stb_image.cpp" />
     <ClCompile Include="include\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
