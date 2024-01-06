@@ -5,11 +5,11 @@
 #include "stdafx.h"
 //---------------------------------------------------------------------------------
 #include <string>
-#include "main.h"
-#include "app.h"
-#include "SimpleSound.h"
-#include "SimpleController.h"
-#include "SimpleSprite.h"
+#include "App/main.h"
+#include "App/app.h"
+#include "App/SimpleSound.h"
+#include "App/SimpleController.h"
+#include "App/SimpleSprite.h"
 
 //---------------------------------------------------------------------------------
 // Utils and externals for system info.

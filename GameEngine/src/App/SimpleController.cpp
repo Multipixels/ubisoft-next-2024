@@ -7,8 +7,8 @@
 #include <windows.h>  // for MS Windows
 #include <stdio.h>
 //-----------------------------------------------------------------------------
-#include "SimpleController.h"
-#include "app.h"
+#include "App/SimpleController.h"
+#include "App/app.h"
 
 //-----------------------------------------------------------------------------
 #if (_WIN32_WINNT >= 0x0602 /*_WIN32_WINNT_WIN8*/)

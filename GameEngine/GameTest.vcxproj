@@ -189,22 +189,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="external\stb_image\stb_image.h" />
-    <ClInclude Include="include\app.h" />
-    <ClInclude Include="include\AppSettings.h" />
-    <ClInclude Include="include\main.h" />
-    <ClInclude Include="include\SimpleController.h" />
-    <ClInclude Include="include\SimpleSound.h" />
-    <ClInclude Include="include\SimpleSprite.h" />
+    <ClInclude Include="include\App\app.h" />
+    <ClInclude Include="include\App\AppSettings.h" />
+    <ClInclude Include="include\GameEngine.h" />
+    <ClInclude Include="include\App\main.h" />
+    <ClInclude Include="include\App\SimpleController.h" />
+    <ClInclude Include="include\App\SimpleSound.h" />
+    <ClInclude Include="include\App\SimpleSprite.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
+    <ClInclude Include="include\Core\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\stb_image\stb_image.cpp" />
-    <ClCompile Include="src\app.cpp" />
+    <ClCompile Include="src\App\app.cpp" />
+    <ClCompile Include="src\Core\Vector2.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\SimpleController.cpp" />
-    <ClCompile Include="src\SimpleSound.cpp" />
-    <ClCompile Include="src\SimpleSprite.cpp" />
+    <ClCompile Include="src\App\SimpleController.cpp" />
+    <ClCompile Include="src\App\SimpleSound.cpp" />
+    <ClCompile Include="src\App\SimpleSprite.cpp" />
     <ClCompile Include="include\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -10,9 +10,9 @@
 #include <vector>
 #include <list>
 //---------------------------------------------------------------------------------
-#include "app.h"
-#include "SimpleSound.h"
-#include "SimpleController.h"
+#include "App/app.h"
+#include "App/SimpleSound.h"
+#include "App/SimpleController.h"
 
 //---------------------------------------------------------------------------------
 // Initial setup globals.

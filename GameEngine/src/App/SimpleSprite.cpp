@@ -11,9 +11,9 @@
 
 //-----------------------------------------------------------------------------
 
-#include "app.h"
-#include "AppSettings.h"
-#include "SimpleSprite.h"
+#include "App/app.h"
+#include "App/AppSettings.h"
+#include "App/SimpleSprite.h"
 
 #include "stb_image.h"
 #include "GL/freeglut_ext.h"
