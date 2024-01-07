@@ -196,12 +196,17 @@
     <ClInclude Include="include\App\SimpleController.h" />
     <ClInclude Include="include\App\SimpleSound.h" />
     <ClInclude Include="include\App\SimpleSprite.h" />
+    <ClInclude Include="include\Scene\Components.h" />
+    <ClInclude Include="include\Scene\Entity.h" />
+    <ClInclude Include="include\Scene\EntityManager.h" />
+    <ClInclude Include="include\Scene\Scene.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
     <ClInclude Include="include\Core\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\stb_image\stb_image.cpp" />
+    <ClInclude Include="include\Scene\EntityMemoryPool.h" />
     <ClCompile Include="src\App\app.cpp" />
     <ClCompile Include="src\Core\Vector2.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -214,6 +219,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Scene\Entity.cpp" />
+    <ClCompile Include="src\Scene\EntityManager.cpp" />
+    <ClCompile Include="src\Scene\EntityMemoryPool.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

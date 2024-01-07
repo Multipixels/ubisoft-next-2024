@@ -1,7 +1,11 @@
+//---------------------------------------------------------------------------------
+// Vector2.h
+//---------------------------------------------------------------------------------
 #pragma once
-
-namespace GameEngine {
-	namespace Core {
+namespace GameEngine 
+{
+	namespace Core 
+	{
 
 		class Vector2
 		{

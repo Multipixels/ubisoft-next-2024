@@ -1,3 +1,6 @@
+//---------------------------------------------------------------------------------
+// Vector2.cpp
+//---------------------------------------------------------------------------------
 #include "stdafx.h"
 
 #include <cassert>
@@ -6,8 +9,10 @@
 #include "Core/Vector2.h"
 
 
-namespace GameEngine {
-	namespace Core {
+namespace GameEngine
+{
+	namespace Core
+	{
 
 		Vector2::Vector2()
 			: x(0), y(0)
@@ -92,7 +97,6 @@ namespace GameEngine {
 		{
 			return (*this - rhs).length();
 		}
-
 
 	}
 }
