@@ -8,7 +8,7 @@
 namespace GameEngine 
 {
 	GameEngine::GameEngine() {
-		Init();
+		init();
 	}
 
 	void GameEngine::init() 

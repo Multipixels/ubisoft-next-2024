@@ -4,6 +4,8 @@
 
 namespace Game
 {
+	using namespace GameEngine::Scene;
+
 	class ScenePlay : Scene 
 	{
 		void init();
@@ -14,7 +16,7 @@ namespace Game
 		void sDoAction();
 
 	public:
-		ScenePlay() = default;
+		ScenePlay();
 
 		void update();
 	};

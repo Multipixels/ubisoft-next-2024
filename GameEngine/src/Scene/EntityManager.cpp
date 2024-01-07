@@ -28,5 +28,9 @@ namespace GameEngine
 			EntityMemoryPool::Instance().removeEntity(entityID);
 		}
 
+		std::vector<Entity>& EntityManager::getEntities() {
+			return entities;
+		}
+
 	}
 }

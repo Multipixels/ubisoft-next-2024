@@ -14,13 +14,14 @@ namespace GameEngine
 
 		class Scene 
 		{
-			EntityManager entities;
 			int currentFrame;
 			bool paused;
 
 			std::map<int, std::string> actionMap;
+		protected:
+			EntityManager entityManager;
 		public:
-			Scene() = default;
+			Scene();
 
 			virtual void update() = 0;
 			virtual void sDoAction(Action action) = 0;

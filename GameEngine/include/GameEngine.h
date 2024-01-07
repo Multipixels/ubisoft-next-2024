@@ -39,7 +39,7 @@ namespace GameEngine
 		void changeScene(int sceneID);
 	};
 
-	void Init() { GameEngine::Instance().init(); };
+	//void Init() { GameEngine::Instance().init(); };
 	void Update(float deltaTime) { GameEngine::Instance().update(deltaTime); };
 	void Render() { GameEngine::Instance().render(); };
 	void Shutdown();

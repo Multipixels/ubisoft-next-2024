@@ -25,6 +25,8 @@ namespace GameEngine
 
 			Entity createEntity();
 			void destroyEntity(size_t entityID);
+			
+			std::vector<Entity>& getEntities();
 		};
 	}
 }

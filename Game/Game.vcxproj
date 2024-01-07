@@ -122,7 +122,7 @@
       <AdditionalDependencies>freeglut.lib;dxguid.lib;dsound.lib;GameEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <AdditionalOptions>/ENTRY:"wWinMainCRTStartup" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/ENTRY:"wWinMainCRTStartup" /VERBOSE %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)GameEngine\external\glut\bin\x64\*.dll" "$(OutputPath)" /Y
