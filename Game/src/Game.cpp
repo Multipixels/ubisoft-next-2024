@@ -2,29 +2,12 @@
 // Game.cpp
 //------------------------------------------------------------------------
 #include <stdafx.h>
-#include <windows.h> 
-#include <math.h>
 
-#include <GameEngine.h>
+#include <Game.h>
 
 using namespace GameEngine::Core;
 
-void Init()
+namespace Game 
 {
-	Vector2 vector = Vector2();
-}
-
-void Update(float deltaTime)
-{
-
-}
-
-void Render()
-{	
-
-}
-
-void Shutdown()
-{	
 
 }
