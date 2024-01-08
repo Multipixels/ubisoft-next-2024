@@ -6,7 +6,6 @@ namespace GameEngine
 {
 	namespace Core 
 	{
-
 		class Vector2
 		{
 		public:

@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------
-// EntityMemoryPool.cpp
+// Scene.cpp
 //---------------------------------------------------------------------------------
 #include "stdafx.h"
 
@@ -9,12 +9,10 @@ namespace GameEngine
 {
 	namespace Scene
 	{
-
 		Scene::Scene()
 			: entityManager(EntityManager::Instance())
 		{
 		}
-
 
 		std::map<int, std::string> Scene::getActionMap()
 		{

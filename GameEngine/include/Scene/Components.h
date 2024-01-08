@@ -1,3 +1,6 @@
+//---------------------------------------------------------------------------------
+// Components.h
+//---------------------------------------------------------------------------------
 #pragma once
 
 #include "Core/Vector2.h"
@@ -8,14 +11,13 @@ namespace GameEngine
 
 	namespace Scene 
 	{
-
 		struct Component 
 		{
 		public:
 			bool exists = false;
 		};
 
-		struct CTransform : public Component 
+		struct CTransform : Component 
 		{
 		public:
 			Vector2 position = Vector2();
@@ -25,7 +27,7 @@ namespace GameEngine
 			CTransform() {};
 		};
 
-		struct CBoundingBox : public Component
+		struct CBoundingBox : Component
 		{
 		public:
 			Vector2 size = Vector2();
@@ -33,7 +35,7 @@ namespace GameEngine
 			CBoundingBox() = default;
 		};
 
-		struct CBoundingCircle : public Component
+		struct CBoundingCircle : Component
 		{
 		public:
 			float radius = 0;
@@ -41,7 +43,7 @@ namespace GameEngine
 			CBoundingCircle() = default;
 		};
 
-		struct CRigidbody : public Component
+		struct CRigidbody : Component
 		{
 			bool isKinematic = false;
 			bool useGravity = false;

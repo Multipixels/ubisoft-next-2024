@@ -1,8 +1,9 @@
+//---------------------------------------------------------------------------------
+// App.h
+//---------------------------------------------------------------------------------
 #pragma once
 
 #include <string>
-
-//https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 
 namespace GameEngine 
 {
