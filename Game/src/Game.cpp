@@ -2,29 +2,23 @@
 // Game.cpp
 //------------------------------------------------------------------------
 #include <stdafx.h>
-#include <windows.h> 
-#include <math.h>
 
-#include <GameEngine.h>
-
-using namespace GameEngine::Core;
+#include "Game.h"
+#include "ScenePlay.h"
 
 void Init()
 {
-	Vector2 vector = Vector2();
+	Game::Init();
 }
 
-void Update(float deltaTime)
+namespace Game 
 {
+	void Init()
+	{
+		std::shared_ptr<ScenePlay> a;
+		a.reset(new ScenePlay);
 
-}
-
-void Render()
-{	
-
-}
-
-void Shutdown()
-{	
-
+		GameEngine::GameEngine::Instance().addScene(a);
+		GameEngine::GameEngine::Instance().changeScene(0);
+	}
 }
