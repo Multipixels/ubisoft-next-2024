@@ -37,13 +37,25 @@ namespace GameEngine
 			}
 
 			template <typename T>
-			bool hasComponent(size_t entityID);
+			bool hasComponent(size_t entityID)
+			{
+				T& component = getComponent<T>(entityID);
+				return component.exists;
+			}
 
 			template <typename T>
-			T& getComponent(size_t entityID);
+			T& getComponent(size_t entityID)
+			{
+				return std::get<std::vector<T>>(entities)[entityID];
+			}
 
 			template <typename T>
-			T& addComponent(size_t entityID);
+			T& addComponent(size_t entityID)
+			{
+				T& component = getComponent<T>(entityID);
+				component.exists = true;
+				return component;
+			}
 
 			Entity addEntity();
 			void removeEntity(size_t entityID);

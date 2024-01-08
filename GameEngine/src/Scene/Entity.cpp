@@ -16,28 +16,9 @@ namespace GameEngine
 
 		}
 
-		void Entity::destroy() 
+		void Entity::destroy()
 		{
 			EntityMemoryPool::Instance().removeEntity(entityID);
 		}
-
-		template<typename T>
-		bool Entity::hasComponent()
-		{
-			return EntityMemoryPool::Instance().hasComponent<T>(entityID);
-		}
-
-		template<typename T>
-		T& Entity::getComponent()
-		{
-			return EntityMemoryPool::Instance().getComponent<T>(entityID);
-		}
-
-		template<typename T>
-		T& Entity::addComponent()
-		{
-			return EntityMemoryPool::Instance().addComponent<T>(entityID);
-		}
-
 	}
 }

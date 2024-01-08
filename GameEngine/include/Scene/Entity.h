@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Scene/Components.h"
+
 namespace GameEngine 
 {
 	namespace Scene 
@@ -14,13 +16,22 @@ namespace GameEngine
 			void destroy();
 
 			template<typename T>
-			bool hasComponent();
+			bool hasComponent()
+			{
+				return EntityMemoryPool::Instance().hasComponent<T>(entityID);
+			}
 
 			template<typename T>
-			T& getComponent();
+			T& getComponent()
+			{
+				return EntityMemoryPool::Instance().getComponent<T>(entityID);
+			}
 
 			template<typename T>
-			T& addComponent();
+			T& addComponent()
+			{
+				return EntityMemoryPool::Instance().addComponent<T>(entityID);
+			}
 		};
 	}
 }

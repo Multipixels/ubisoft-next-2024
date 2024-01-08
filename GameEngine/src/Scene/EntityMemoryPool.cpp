@@ -11,15 +11,16 @@ namespace GameEngine
 	{
 		EntityMemoryPool::EntityMemoryPool(size_t maxEntities)
 		{
-			std::vector<CTransform> cTransformVector;
-			std::vector<CBoundingBox> cBoundingBoxVector;
-			std::vector<CBoundingCircle> cBoundingCircleVector;
-			std::vector<CRigidbody> cRigidbodyVector;
+			std::vector<CTransform> cTransformVector(maxEntities);
+			std::vector<CBoundingBox> cBoundingBoxVector(maxEntities);
+			std::vector<CBoundingCircle> cBoundingCircleVector(maxEntities);
+			std::vector<CRigidbody> cRigidbodyVector(maxEntities);
 
-			cTransformVector.reserve(maxEntities);
+
+			/*CTransformVector.reserve(maxEntities);
 			cBoundingBoxVector.reserve(maxEntities);
 			cBoundingCircleVector.reserve(maxEntities);
-			cRigidbodyVector.reserve(maxEntities);
+			cRigidbodyVector.reserve(maxEntities);*/
 
 			entities = std::make_tuple(
 				cTransformVector,
@@ -27,6 +28,8 @@ namespace GameEngine
 				cBoundingCircleVector,
 				cRigidbodyVector
 			);
+
+			active = std::vector<bool>(maxEntities);
 		}
 
 		size_t EntityMemoryPool::getNextEntityID()
@@ -35,35 +38,15 @@ namespace GameEngine
 			return numOfEntities - 1;
 		}
 
-		template <typename T>
-		bool EntityMemoryPool::hasComponent(size_t entityID)
-		{
-			T& component = getComponent(entityID);
-			return component->exists;
-		}
-
-		template <typename T>
-		T& EntityMemoryPool::getComponent(size_t entityID)
-		{
-			return std::get<std::vector<T>>(entities)[entityID];
-		}
-
-		template <typename T>
-		T& EntityMemoryPool::addComponent(size_t entityID)
-		{
-			T& component = getComponent(entityID);
-			component->exists = true;
-		}
-
 		Entity EntityMemoryPool::addEntity()
 		{
 			size_t entityID = getNextEntityID();
 
 			// ERROR HERE
-			std::get<std::vector<CTransform>>(entities)[entityID] = CTransform();
-			std::get<std::vector<CBoundingBox>>(entities)[entityID] = CBoundingBox();
-			std::get<std::vector<CBoundingCircle>>(entities)[entityID] = CBoundingCircle();
-			std::get<std::vector<CRigidbody>>(entities)[entityID] = CRigidbody();
+			std::get<std::vector<CTransform>>(entities).insert(std::get<std::vector<CTransform>>(entities).begin(), entityID, CTransform());
+			std::get<std::vector<CBoundingBox>>(entities).insert(std::get<std::vector<CBoundingBox>>(entities).begin(), entityID, CBoundingBox());
+			std::get<std::vector<CBoundingCircle>>(entities).insert(std::get<std::vector<CBoundingCircle>>(entities).begin(), entityID, CBoundingCircle());
+			std::get<std::vector<CRigidbody>>(entities).insert(std::get<std::vector<CRigidbody>>(entities).begin(), entityID, CRigidbody());
 
 			active[entityID] = true;
 

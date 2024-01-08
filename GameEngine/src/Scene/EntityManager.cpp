@@ -19,7 +19,9 @@ namespace GameEngine
 		Entity EntityManager::createEntity()
 		{
 			Entity e = EntityMemoryPool::Instance().addEntity();
-			entitiesToAdd.push_back(e);
+			//TODO: entity buffer
+			//entitiesToAdd.push_back(e);
+			entities.push_back(e);
 			return e;
 		}
 
