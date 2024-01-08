@@ -9,6 +9,13 @@ namespace GameEngine
 {
 	namespace Scene
 	{
+
+		Scene::Scene()
+			: entityManager(EntityManager::Instance())
+		{
+		}
+
+
 		std::map<int, std::string> Scene::getActionMap()
 		{
 			return actionMap;

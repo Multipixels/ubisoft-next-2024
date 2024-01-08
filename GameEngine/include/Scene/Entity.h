@@ -20,7 +20,7 @@ namespace GameEngine
 			T& getComponent();
 
 			template<typename T>
-			void addComponent();
+			T& addComponent();
 		};
 	}
 }

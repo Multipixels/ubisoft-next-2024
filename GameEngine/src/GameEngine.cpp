@@ -20,6 +20,11 @@ namespace GameEngine
 
 	void GameEngine::update(float deltaTime)
 	{
+		if (currentScene == -1)
+		{
+			return;
+		}
+
 		auto currentScene = getCurrentScene();
 		auto sceneActionMap = currentScene->getActionMap();
 		for (auto key : sceneActionMap) 
@@ -36,7 +41,10 @@ namespace GameEngine
 
 	void GameEngine::render()
 	{
-		getCurrentScene()->sRender();
+		if (currentScene != -1) 
+		{
+			getCurrentScene()->sRender();
+		}
 	}
 
 
@@ -56,12 +64,19 @@ namespace GameEngine
 	{
 		return sceneMap[currentScene];
 	}
+}
 
+void Update(float deltaTime) 
+{ 
+	GameEngine::GameEngine::Instance().update(deltaTime); 
+}
 
+void Render() 
+{ 
+	GameEngine::GameEngine::Instance().render(); 
+}
 
-	
-	void Shutdown()
-	{
+void Shutdown()
+{
 
-	}
 }

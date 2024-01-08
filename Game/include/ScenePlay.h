@@ -6,14 +6,14 @@ namespace Game
 {
 	using namespace GameEngine::Scene;
 
-	class ScenePlay : Scene 
+	class ScenePlay : public Scene 
 	{
 		void init();
 
 		// Game Specific System Definitions
 		void sCollision();
 		void sRender();
-		void sDoAction();
+		void sDoAction(Action action);
 
 	public:
 		ScenePlay();

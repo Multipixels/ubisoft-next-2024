@@ -22,19 +22,19 @@ namespace GameEngine
 		}
 
 		template<typename T>
-		bool Entity::hasComponent() 
+		bool Entity::hasComponent()
 		{
 			return EntityMemoryPool::Instance().hasComponent<T>(entityID);
 		}
 
 		template<typename T>
-		T& getComponent() 
+		T& Entity::getComponent()
 		{
 			return EntityMemoryPool::Instance().getComponent<T>(entityID);
 		}
 
 		template<typename T>
-		void addComponent() 
+		T& Entity::addComponent()
 		{
 			return EntityMemoryPool::Instance().addComponent<T>(entityID);
 		}

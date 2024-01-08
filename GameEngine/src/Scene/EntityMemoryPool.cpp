@@ -59,6 +59,7 @@ namespace GameEngine
 		{
 			size_t entityID = getNextEntityID();
 
+			// ERROR HERE
 			std::get<std::vector<CTransform>>(entities)[entityID] = CTransform();
 			std::get<std::vector<CBoundingBox>>(entities)[entityID] = CBoundingBox();
 			std::get<std::vector<CBoundingCircle>>(entities)[entityID] = CBoundingCircle();

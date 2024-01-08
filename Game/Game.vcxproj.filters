@@ -29,10 +29,10 @@
     <ClInclude Include="include\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\ScenePlay.h">
+    <ClInclude Include="include\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Game.h">
+    <ClInclude Include="include\ScenePlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

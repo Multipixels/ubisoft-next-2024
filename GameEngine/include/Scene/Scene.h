@@ -14,8 +14,8 @@ namespace GameEngine
 
 		class Scene 
 		{
-			int currentFrame;
-			bool paused;
+			int currentFrame = 0;
+			bool paused = false;
 
 			std::map<int, std::string> actionMap;
 		protected:

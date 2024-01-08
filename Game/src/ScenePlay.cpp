@@ -24,9 +24,9 @@ namespace Game
 		registerAction('D', "RIGHT");
 
 		Entity e = entityManager.createEntity();
-		e.addComponent<CTransform>();
-		e.addComponent<CBoundingBox>();
-		e.getComponent<CBoundingBox>().size = Vector2(1, 1);
+		//e.addComponent<CTransform>();
+		//e.addComponent<CBoundingBox>();
+		//e.getComponent<CBoundingBox>().size = Vector2(1, 1);
 	}
 
 	void ScenePlay::update()
@@ -41,7 +41,8 @@ namespace Game
 
 	void ScenePlay::sRender()
 	{
-		for(auto entity : entityManager.getEntities()) 
+		App::Print(0, 0, "hi", 0.5f, 0.5f, 0.5f);
+		/* for (auto entity : entityManager.getEntities())
 		{
 			if (entity.hasComponent<CTransform>() && entity.hasComponent<CBoundingBox>())
 			{
@@ -68,10 +69,10 @@ namespace Game
 					transform.position.x + bb.size.x / 2, transform.position.y - bb.size.y / 2,
 					1, 1, 1);
 			}
-		}
+		}*/
 	}
 
-	void ScenePlay::sDoAction()
+	void ScenePlay::sDoAction(Action action)
 	{
 
 	}

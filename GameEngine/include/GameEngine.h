@@ -5,6 +5,9 @@
 // Actions Libraries
 #include "Actions/Action.h"
 
+// App Libraries
+// TODO
+
 // Core Libraries
 #include "Core/Vector2.h"
 
@@ -40,7 +43,9 @@ namespace GameEngine
 	};
 
 	//void Init() { GameEngine::Instance().init(); };
-	void Update(float deltaTime) { GameEngine::Instance().update(deltaTime); };
-	void Render() { GameEngine::Instance().render(); };
-	void Shutdown();
 }
+
+void Init();
+void Update(float deltaTime);
+void Render();
+void Shutdown();

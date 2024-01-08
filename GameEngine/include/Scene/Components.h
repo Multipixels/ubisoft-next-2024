@@ -15,17 +15,17 @@ namespace GameEngine
 			bool exists = false;
 		};
 
-		struct CTransform : Component 
+		struct CTransform : public Component 
 		{
 		public:
 			Vector2 position = Vector2();
 			Vector2 previousPosition = Vector2();
 			Vector2 scale = Vector2(1, 1);
 
-			CTransform() = default;
+			CTransform() {};
 		};
 
-		struct CBoundingBox : Component 
+		struct CBoundingBox : public Component
 		{
 		public:
 			Vector2 size = Vector2();
@@ -33,7 +33,7 @@ namespace GameEngine
 			CBoundingBox() = default;
 		};
 
-		struct CBoundingCircle : Component 
+		struct CBoundingCircle : public Component
 		{
 		public:
 			float radius = 0;
@@ -41,7 +41,7 @@ namespace GameEngine
 			CBoundingCircle() = default;
 		};
 
-		struct CRigidbody : Component 
+		struct CRigidbody : public Component
 		{
 			bool isKinematic = false;
 			bool useGravity = false;
