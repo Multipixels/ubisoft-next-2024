@@ -6,10 +6,7 @@
 #include "Game.h"
 #include "ScenePlay.h"
 
-void Init()
-{
-	Game::Init();
-}
+void Init() { Game::Init(); }
 
 namespace Game 
 {

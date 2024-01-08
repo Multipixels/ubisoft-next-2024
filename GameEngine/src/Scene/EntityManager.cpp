@@ -33,6 +33,5 @@ namespace GameEngine
 		std::vector<Entity>& EntityManager::getEntities() {
 			return entities;
 		}
-
 	}
 }

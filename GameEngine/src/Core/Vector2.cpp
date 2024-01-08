@@ -8,22 +8,18 @@
 
 #include "Core/Vector2.h"
 
-
 namespace GameEngine
 {
 	namespace Core
 	{
-
 		Vector2::Vector2()
 			: x(0), y(0)
 		{
-
 		}
 
 		Vector2::Vector2(const float xIn, const float yIn)
 			: x(xIn), y(yIn)
 		{
-
 		}
 
 		bool Vector2::operator ==(const Vector2& rhs) const
@@ -35,8 +31,6 @@ namespace GameEngine
 		{
 			return !(x == rhs.x && y == rhs.y);
 		}
-
-
 
 		Vector2 Vector2::operator +(const Vector2& rhs) const
 		{
@@ -58,8 +52,6 @@ namespace GameEngine
 			assert(scale != 0 && "Division by zero.");
 			return Vector2(x / scale, y / scale);
 		}
-
-
 
 		void Vector2::operator +=(const Vector2& rhs)
 		{
@@ -86,8 +78,6 @@ namespace GameEngine
 			y += scale;
 		}
 
-
-
 		float Vector2::length() const
 		{
 			return (float)(sqrt(pow(x, 2) + pow(y, 2)));
@@ -97,6 +87,5 @@ namespace GameEngine
 		{
 			return (*this - rhs).length();
 		}
-
 	}
 }

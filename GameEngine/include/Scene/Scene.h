@@ -1,9 +1,12 @@
+//---------------------------------------------------------------------------------
+// Scene.h
+//---------------------------------------------------------------------------------
 #pragma once
-
-#include "EntityManager.h"
 
 #include <string>
 #include <map>
+
+#include "Scene/EntityManager.h"
 #include "Actions/Action.h"
 
 namespace GameEngine 

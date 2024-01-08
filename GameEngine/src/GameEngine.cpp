@@ -13,11 +13,10 @@ namespace GameEngine
 
 	void GameEngine::init() 
 	{
-		sceneMap.reserve(10);
 		// TODO: Load assets
+		sceneMap.reserve(10);
 	}
-
-
+	
 	void GameEngine::update(float deltaTime)
 	{
 		if (currentScene == -1)
@@ -47,8 +46,6 @@ namespace GameEngine
 		}
 	}
 
-
-
 	void GameEngine::addScene(std::shared_ptr<Scene::Scene> sceneToAdd)
 	{
 		sceneMap.push_back(sceneToAdd);
@@ -58,7 +55,6 @@ namespace GameEngine
 	{
 		currentScene = sceneID;
 	}
-
 
 	std::shared_ptr<Scene::Scene> GameEngine::getCurrentScene()
 	{
