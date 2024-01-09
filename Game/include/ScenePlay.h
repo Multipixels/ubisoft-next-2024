@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------
 #pragma once
 
-#include <GameEngine.h>
+#include <GameEngineManager.h>
 
 namespace Game
 {
@@ -14,7 +14,7 @@ namespace Game
 		void init();
 
 		// Game Specific System Definitions
-		void sCollision();
+		void sPhysics();
 		void sRender();
 		void sDoAction(Action action);
 

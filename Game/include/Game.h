@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------
 #pragma once
 
-#include <GameEngine.h>
+#include <GameEngineManager.h>
 
 namespace Game
 {

@@ -26,7 +26,12 @@ namespace GameEngine
 
 		std::string Action::toString() const
 		{
-			return "";
+			switch(actionType)
+			{
+				case NONE: return (actionName + " None");
+				case PRESS: return (actionName + " Press");
+				case RELEASE: return (actionName + " Release");
+			}
 		}
 	}
 }

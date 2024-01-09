@@ -21,16 +21,17 @@
 
 namespace GameEngine 
 {
-	class GameEngine
+	class GameEngineManager
 	{
-		GameEngine();
+		GameEngineManager();
 
 		std::vector<std::shared_ptr<Scene::Scene>> sceneMap;
-		int currentScene = -1;
+		std::map<int, Actions::ActionType> previousKeyStates;
+		int currentSceneIndex = -1;
 	public:
-		static GameEngine& Instance()
+		static GameEngineManager& Instance()
 		{
-			static GameEngine gameEngine;
+			static GameEngineManager gameEngine;
 			return gameEngine;
 		}
 
@@ -41,9 +42,10 @@ namespace GameEngine
 		void addScene(std::shared_ptr<Scene::Scene> sceneToAdd);
 		std::shared_ptr<Scene::Scene> getCurrentScene();
 		void changeScene(int sceneID);
+		void registerAction(int actionKey);
 	};
 
-	//void Init() { GameEngine::Instance().init(); };
+	//void Init() { GameEngineManager::Instance().init(); };
 }
 
 void Init();

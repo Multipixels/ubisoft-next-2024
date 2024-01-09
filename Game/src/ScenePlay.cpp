@@ -11,6 +11,8 @@ using namespace GameEngine::Actions;
 
 namespace Game
 {
+	std::string a = "";
+
 	ScenePlay::ScenePlay()
 	{
 		init();
@@ -33,17 +35,17 @@ namespace Game
 
 	void ScenePlay::update()
 	{
-
+	
 	}
 
-	void ScenePlay::sCollision()
+	void ScenePlay::sPhysics()
 	{
 
 	}
 
 	void ScenePlay::sRender()
 	{
-		App::Print(500, 500, "hi", 0.5f, 0.5f, 0.5f);
+		App::Print(500, 500, a.c_str(), 0.5f, 0.5f, 0.5f);
 		for (auto entity : entityManager.getEntities())
 		{
 			if (entity.hasComponent<CTransform>() && entity.hasComponent<CBoundingBox>())
@@ -76,6 +78,9 @@ namespace Game
 
 	void ScenePlay::sDoAction(Action action)
 	{
-
+		if (action.name() == "UP" && action.type() == PRESS)
+		{
+			GameEngine::GameEngineManager::Instance().changeScene(1);
+		}
 	}
 }

@@ -4,6 +4,7 @@
 #include "stdafx.h"
 
 #include "Scene/Scene.h"
+#include "GameEngineManager.h"
 
 namespace GameEngine
 {
@@ -22,6 +23,7 @@ namespace GameEngine
 		void Scene::registerAction(int keyID, const std::string actionName)
 		{
 			actionMap[keyID] = actionName;
+			GameEngineManager::Instance();
 		}
 
 		void Scene::doAction(Action action)
