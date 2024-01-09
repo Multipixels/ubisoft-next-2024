@@ -5,8 +5,6 @@
 
 #include "ScenePlay.h"
 
-#include "stdio.h"
-
 using namespace GameEngine::Core;
 using namespace GameEngine::Scene;
 using namespace GameEngine::Actions;

@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------
-// Scene.h
+// AbstractScene.h
 //---------------------------------------------------------------------------------
 #pragma once
 
@@ -15,7 +15,7 @@ namespace GameEngine
 	{
 		using namespace Actions;
 
-		class Scene 
+		class AbstractScene
 		{
 			int currentFrame = 0;
 			bool paused = false;
@@ -24,7 +24,7 @@ namespace GameEngine
 		protected:
 			EntityManager entityManager;
 		public:
-			Scene();
+			AbstractScene();
 
 			virtual void init() = 0;
 			virtual void update() = 0;

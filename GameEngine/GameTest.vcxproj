@@ -192,6 +192,7 @@
     <ClInclude Include="include\Actions\Action.h" />
     <ClInclude Include="include\App\app.h" />
     <ClInclude Include="include\App\AppSettings.h" />
+    <ClInclude Include="include\Assert\assert.h" />
     <ClInclude Include="include\GameEngineManager.h" />
     <ClInclude Include="include\App\main.h" />
     <ClInclude Include="include\App\SimpleController.h" />
@@ -200,7 +201,8 @@
     <ClInclude Include="include\Scene\Components.h" />
     <ClInclude Include="include\Scene\Entity.h" />
     <ClInclude Include="include\Scene\EntityManager.h" />
-    <ClInclude Include="include\Scene\Scene.h" />
+    <ClInclude Include="include\Scene\ErrorScene.h" />
+    <ClInclude Include="include\Scene\AbstractScene.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
     <ClInclude Include="include\Core\Vector2.h" />
@@ -209,7 +211,8 @@
     <ClCompile Include="external\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Actions\Action.cpp" />
     <ClCompile Include="src\GameEngineManager.cpp" />
-    <ClCompile Include="src\Scene\Scene.cpp" />
+    <ClCompile Include="src\Scene\ErrorScene.cpp" />
+    <ClCompile Include="src\Scene\AbstractScene.cpp" />
     <ClInclude Include="include\Scene\EntityMemoryPool.h" />
     <ClCompile Include="src\App\app.cpp" />
     <ClCompile Include="src\Core\Vector2.cpp" />

@@ -9,7 +9,7 @@ namespace Game
 {
 	using namespace GameEngine::Scene;
 
-	class ScenePlay2 : public Scene 
+	class ScenePlay2 : public AbstractScene
 	{
 		void init();
 

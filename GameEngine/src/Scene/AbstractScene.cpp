@@ -1,32 +1,32 @@
 //---------------------------------------------------------------------------------
-// Scene.cpp
+// AbstractScene.cpp
 //---------------------------------------------------------------------------------
 #include "stdafx.h"
 
-#include "Scene/Scene.h"
+#include "Scene/AbstractScene.h"
 #include "GameEngineManager.h"
 
 namespace GameEngine
 {
 	namespace Scene
 	{
-		Scene::Scene()
+		AbstractScene::AbstractScene()
 			: entityManager(EntityManager())
 		{
 		}
 
-		std::map<int, std::string> Scene::getActionMap()
+		std::map<int, std::string> AbstractScene::getActionMap()
 		{
 			return actionMap;
 		}
 
-		void Scene::registerAction(int keyID, const std::string actionName)
+		void AbstractScene::registerAction(int keyID, const std::string actionName)
 		{
 			actionMap[keyID] = actionName;
 			GameEngineManager::Instance();
 		}
 
-		void Scene::doAction(Action action)
+		void AbstractScene::doAction(Action action)
 		{
 			sDoAction(action);
 		}

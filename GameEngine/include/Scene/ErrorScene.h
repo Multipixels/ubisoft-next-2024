@@ -1,26 +1,23 @@
 //------------------------------------------------------------------------
-// ScenePlay.h
+// ErrorScene.h
 //------------------------------------------------------------------------
 #pragma once
 
-#include <GameEngineManager.h>
+#include "Scene/AbstractScene.h"
 
-namespace Game
+namespace GameEngine
 {
-	using namespace GameEngine::Scene;
+	using namespace Scene;
 
-	class ScenePlay : public AbstractScene
+	class ErrorScene : public AbstractScene
 	{
-		void init();
+		std::string errorMessage;
+	public:
+		ErrorScene(std::string message);
 
-		// Game Specific System Definitions
-		void sPhysics();
+		void init();
 		void sRender();
 		void sDoAction(Action action);
-
-	public:
-		ScenePlay();
-
 		void update();
 	};
 }

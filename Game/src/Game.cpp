@@ -18,7 +18,7 @@ namespace Game
 		//a.reset(new ScenePlay);
 		//b.reset(new ScenePlay2);
 
-		GameEngine::GameEngineManager::Instance().addScene(a);
+		//GameEngine::GameEngineManager::Instance().addScene(a);
 		//GameEngine::GameEngineManager::Instance().addScene(b);
 		GameEngine::GameEngineManager::Instance().changeScene(0);
 	}

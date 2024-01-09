@@ -14,11 +14,16 @@ namespace GameEngine
 	void GameEngineManager::init()
 	{
 		// TODO: Load assets
-		sceneMap.reserve(10);
 	}
 	
 	void GameEngineManager::update(float deltaTime)
 	{
+		if (crashed)
+		{
+			crashScene->update();
+			return;
+		}
+
 		if (currentSceneIndex == -1)
 		{
 			return;
@@ -59,15 +64,34 @@ namespace GameEngine
 
 	void GameEngineManager::render()
 	{
-		if (currentSceneIndex != -1)
+		if (crashed)
 		{
-			getCurrentScene()->sRender();
+			crashScene->sRender();
+			return;
 		}
+		getCurrentScene()->sRender();
 	}
 
-	void GameEngineManager::addScene(std::shared_ptr<Scene::Scene> sceneToAdd)
+	void GameEngineManager::crash(std::string message)
 	{
-		sceneMap.push_back(sceneToAdd);
+		if (crashed) return;
+
+		crashed = true;
+		crashScene = std::make_shared<ErrorScene>(message);
+		crashScene->sRender();
+		glutMainLoop();
+	}
+
+	void GameEngineManager::crash()
+	{
+		crashed = true;
+		crashScene = std::make_shared<ErrorScene>("");
+	}
+
+	void GameEngineManager::addScene(std::shared_ptr<Scene::AbstractScene> sceneToAdd)
+	{
+		// TODO: GET NEW KEY
+		sceneMap[0] = (sceneToAdd);
 	}
 
 	void GameEngineManager::changeScene(int sceneID)
@@ -76,8 +100,9 @@ namespace GameEngine
 		getCurrentScene()->init();
 	}
 
-	std::shared_ptr<Scene::Scene> GameEngineManager::getCurrentScene()
+	std::shared_ptr<Scene::AbstractScene> GameEngineManager::getCurrentScene()
 	{
+		ASSERT(sceneMap.count(currentSceneIndex), "Could not get current scene");
 		return sceneMap[currentSceneIndex];
 	}
 
