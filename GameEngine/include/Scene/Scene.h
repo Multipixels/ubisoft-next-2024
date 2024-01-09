@@ -26,6 +26,7 @@ namespace GameEngine
 		public:
 			Scene();
 
+			virtual void init() = 0;
 			virtual void update() = 0;
 			virtual void sDoAction(Action action) = 0;
 			virtual void sRender() = 0;

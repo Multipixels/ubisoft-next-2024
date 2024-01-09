@@ -5,6 +5,8 @@
 
 #include "ScenePlay.h"
 
+#include "stdio.h"
+
 using namespace GameEngine::Core;
 using namespace GameEngine::Scene;
 using namespace GameEngine::Actions;
@@ -15,7 +17,6 @@ namespace Game
 
 	ScenePlay::ScenePlay()
 	{
-		init();
 	}
 
 	void ScenePlay::init()
@@ -26,7 +27,6 @@ namespace Game
 		registerAction('D', "RIGHT");
 
 		Entity e = entityManager.createEntity();
-		e.hasComponent<CTransform>();
 		e.addComponent<CTransform>();
 		e.addComponent<CBoundingBox>();
 		e.getComponent<CBoundingBox>().size = Vector2(100, 100);
@@ -46,6 +46,7 @@ namespace Game
 	void ScenePlay::sRender()
 	{
 		App::Print(500, 500, a.c_str(), 0.5f, 0.5f, 0.5f);
+
 		for (auto entity : entityManager.getEntities())
 		{
 			if (entity.hasComponent<CTransform>() && entity.hasComponent<CBoundingBox>())
@@ -78,6 +79,7 @@ namespace Game
 
 	void ScenePlay::sDoAction(Action action)
 	{
+		a = action.toString();
 		if (action.name() == "UP" && action.type() == PRESS)
 		{
 			GameEngine::GameEngineManager::Instance().changeScene(1);

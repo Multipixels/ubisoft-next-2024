@@ -18,13 +18,8 @@ namespace GameEngine
 			std::vector<Entity> entities;
 			std::vector<Entity> entitiesToAdd;
 			
-			EntityManager();
 		public:
-			static EntityManager& Instance()
-			{
-			    static EntityManager entityManager;
-				return entityManager;
-			}
+			EntityManager();
 
 			Entity createEntity();
 			void destroyEntity(size_t entityID);

@@ -11,7 +11,7 @@ namespace GameEngine
 	namespace Scene
 	{
 		Scene::Scene()
-			: entityManager(EntityManager::Instance())
+			: entityManager(EntityManager())
 		{
 		}
 

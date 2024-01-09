@@ -13,13 +13,13 @@ namespace Game
 {
 	void Init()
 	{
-		std::shared_ptr<ScenePlay> a;// = std::make_shared<ScenePlay>();
-		std::shared_ptr<ScenePlay2> b;// = std::make_shared<ScenePlay>();
-		a.reset(new ScenePlay);
-		b.reset(new ScenePlay2);
+		std::shared_ptr<ScenePlay> a = std::make_shared<ScenePlay>();
+		std::shared_ptr<ScenePlay2> b = std::make_shared<ScenePlay2>();
+		//a.reset(new ScenePlay);
+		//b.reset(new ScenePlay2);
 
 		GameEngine::GameEngineManager::Instance().addScene(a);
-		GameEngine::GameEngineManager::Instance().addScene(b);
+		//GameEngine::GameEngineManager::Instance().addScene(b);
 		GameEngine::GameEngineManager::Instance().changeScene(0);
 	}
 }

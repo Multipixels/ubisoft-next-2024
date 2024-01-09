@@ -73,6 +73,7 @@ namespace GameEngine
 	void GameEngineManager::changeScene(int sceneID)
 	{
 		currentSceneIndex = sceneID;
+		getCurrentScene()->init();
 	}
 
 	std::shared_ptr<Scene::Scene> GameEngineManager::getCurrentScene()

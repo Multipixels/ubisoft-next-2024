@@ -15,7 +15,6 @@ namespace Game
 
 	ScenePlay2::ScenePlay2()
 	{
-		init();
 	}
 
 	void ScenePlay2::init()
@@ -30,7 +29,7 @@ namespace Game
 		e.addComponent<CTransform>();
 		e.addComponent<CBoundingBox>();
 		e.getComponent<CBoundingBox>().size = Vector2(100, 100);
-		e.getComponent<CTransform>().position = Vector2(500, 500);
+		e.getComponent<CTransform>().position = Vector2(700, 500);
 	}
 
 	void ScenePlay2::update()
@@ -78,9 +77,10 @@ namespace Game
 
 	void ScenePlay2::sDoAction(Action action)
 	{
+		b = action.toString();
 		if (action.name() == "UP" && action.type() == PRESS)
 		{
-			GameEngine::GameEngineManager::Instance().changeScene(1);
+			GameEngine::GameEngineManager::Instance().changeScene(0);
 		}
 	}
 }
