@@ -3,11 +3,11 @@
 //------------------------------------------------------------------------
 #include "stdafx.h"
 
-#include "ScenePlay.h"
+#include "Scenes/ScenePlay.h"
 
-using namespace GameEngine::Core;
-using namespace GameEngine::Scene;
-using namespace GameEngine::Actions;
+using namespace MultipixelEngine::Core;
+using namespace MultipixelEngine::Events;
+using namespace MultipixelEngine::Scene;
 
 namespace Game
 {
@@ -24,7 +24,7 @@ namespace Game
 		registerAction('A', "LEFT");
 		registerAction('D', "RIGHT");
 
-		Entity e = entityManager.createEntity();
+		GameObject e = gameObjectManager.createGameObject();
 		e.addComponent<CTransform>();
 		e.addComponent<CBoundingBox>();
 		e.getComponent<CBoundingBox>().size = Vector2(100, 100);
@@ -45,7 +45,7 @@ namespace Game
 	{
 		App::Print(500, 500, a.c_str(), 0.5f, 0.5f, 0.5f);
 
-		for (auto entity : entityManager.getEntities())
+		for (auto entity : gameObjectManager.getGameObjects())
 		{
 			if (entity.hasComponent<CTransform>() && entity.hasComponent<CBoundingBox>())
 			{
@@ -80,7 +80,7 @@ namespace Game
 		a = action.toString();
 		if (action.name() == "UP" && action.type() == PRESS)
 		{
-			GameEngine::GameEngineManager::Instance().changeScene(1);
+			MultipixelEngine::GameEngine::Instance().changeScene(1);
 		}
 	}
 }

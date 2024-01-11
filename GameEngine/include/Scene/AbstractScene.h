@@ -6,15 +6,16 @@
 #include <string>
 #include <map>
 
-#include "Scene/EntityManager.h"
-#include "Actions/Action.h"
+#include "Core/GameObjectManager.h"
+#include "Events/Action.h"
 
-namespace GameEngine 
+namespace MultipixelEngine 
 {
+	using namespace Core;
+	using namespace Events;
+
 	namespace Scene 
 	{
-		using namespace Actions;
-
 		class AbstractScene
 		{
 			int currentFrame = 0;
@@ -22,7 +23,7 @@ namespace GameEngine
 
 			std::map<int, std::string> actionMap;
 		protected:
-			EntityManager entityManager;
+			GameObjectManager gameObjectManager;
 		public:
 			AbstractScene();
 
@@ -32,7 +33,7 @@ namespace GameEngine
 			virtual void sRender() = 0;
 
 			std::map<int, std::string> getActionMap();
-			void registerAction(int keyID, const std::string actionName);
+			void registerAction(int keyId, const std::string actionName);
 			void doAction(Action action);
 		};
 	}

@@ -3,34 +3,36 @@
 //---------------------------------------------------------------------------------
 #pragma once
 
-// Actions Libraries
-#include "Actions/Action.h"
+#include <memory>
 
-// App Libraries
+// App Library
 #include "App/app.h"
 
 // Assert Library
 #include "Assert/assert.h"
 
-// Core Libraries
+// Core Library
+#include "Core/Components.h"
+#include "Core/GameObject.h"
+#include "Core/GameObjectManager.h"
+#include "Core/GameObjectMemoryPool.h"
 #include "Core/Vector2.h"
 
-// Scene Libraries
+// Events Library
+#include "Events/Action.h"
+
+// Scene Library
 #include "Scene/AbstractScene.h"
-#include "Scene/Components.h"
-#include "Scene/Entity.h"
-#include "Scene/EntityManager.h"
-#include "Scene/EntityMemoryPool.h"
 #include "Scene/ErrorScene.h"
 
-namespace GameEngine 
+namespace MultipixelEngine 
 {
-	class GameEngineManager
+	class GameEngine
 	{
-		GameEngineManager();
+		GameEngine();
 
 		std::map<int, std::shared_ptr<Scene::AbstractScene>> sceneMap;
-		std::map<int, Actions::ActionType> previousKeyStates;
+		std::map<int, Events::ActionType> previousKeyStates;
 		int currentSceneIndex = -1;
 
 		bool crashed = false;
@@ -38,9 +40,9 @@ namespace GameEngine
 		std::shared_ptr<ErrorScene> crashScene;
 		;
 	public:
-		static GameEngineManager& Instance()
+		static GameEngine& Instance()
 		{
-			static GameEngineManager gameEngine;
+			static GameEngine gameEngine;
 			return gameEngine;
 		}
 
@@ -56,9 +58,11 @@ namespace GameEngine
 		void changeScene(int sceneID);
 		void registerAction(int actionKey);
 	};
-
-	//void Init() { GameEngineManager::Instance().init(); };
 }
+
+
+
+// Defined in the global namespace to then redirect to GameEngine namespace.
 
 void Init();
 void Update(float deltaTime);

@@ -21,10 +21,10 @@
     <ClCompile Include="src\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ScenePlay.cpp">
+    <ClCompile Include="src\Scenes\ScenePlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\ScenePlay2.cpp">
+    <ClCompile Include="src\Scenes\ScenePlay2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,10 +35,10 @@
     <ClInclude Include="include\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\ScenePlay.h">
+    <ClInclude Include="include\Scenes\ScenePlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\ScenePlay2.h">
+    <ClInclude Include="include\Scenes\ScenePlay2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

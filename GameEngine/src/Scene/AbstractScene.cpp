@@ -4,14 +4,14 @@
 #include "stdafx.h"
 
 #include "Scene/AbstractScene.h"
-#include "GameEngineManager.h"
+#include "GameEngine.h"
 
-namespace GameEngine
+namespace MultipixelEngine
 {
 	namespace Scene
 	{
 		AbstractScene::AbstractScene()
-			: entityManager(EntityManager())
+			: gameObjectManager(GameObjectManager())
 		{
 		}
 
@@ -20,10 +20,10 @@ namespace GameEngine
 			return actionMap;
 		}
 
-		void AbstractScene::registerAction(int keyID, const std::string actionName)
+		void AbstractScene::registerAction(int keyId, const std::string actionName)
 		{
-			actionMap[keyID] = actionName;
-			GameEngineManager::Instance();
+			actionMap[keyId] = actionName;
+			GameEngine::Instance();
 		}
 
 		void AbstractScene::doAction(Action action)

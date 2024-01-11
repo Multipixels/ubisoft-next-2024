@@ -8,7 +8,7 @@
 
 #include "Core/Vector2.h"
 
-namespace GameEngine
+namespace MultipixelEngine
 {
 	namespace Core
 	{

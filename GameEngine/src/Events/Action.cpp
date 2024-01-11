@@ -3,11 +3,11 @@
 //---------------------------------------------------------------------------------
 #include "stdafx.h"
 
-#include "Actions/Action.h"
+#include "Events/Action.h"
 
-namespace GameEngine 
+namespace MultipixelEngine 
 {
-	namespace Actions
+	namespace Events
 	{
 		Action::Action(const std::string& nameIn, const ActionType typeIn)
 			: actionName(nameIn), actionType(typeIn)

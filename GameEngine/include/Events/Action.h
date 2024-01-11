@@ -1,13 +1,13 @@
 //---------------------------------------------------------------------------------
-// App.h
+// Action.h
 //---------------------------------------------------------------------------------
 #pragma once
 
 #include <string>
 
-namespace GameEngine 
+namespace MultipixelEngine 
 {
-	namespace Actions 
+	namespace Events 
 	{
 		enum ActionType { NONE, PRESS, RELEASE };
 

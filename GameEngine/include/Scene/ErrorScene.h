@@ -5,7 +5,7 @@
 
 #include "Scene/AbstractScene.h"
 
-namespace GameEngine
+namespace MultipixelEngine
 {
 	using namespace Scene;
 

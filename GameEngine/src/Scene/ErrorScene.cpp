@@ -6,7 +6,7 @@
 #include "App/app.h"
 #include "Scene/ErrorScene.h"
 
-namespace GameEngine
+namespace MultipixelEngine
 {
 	ErrorScene::ErrorScene(std::string message)
 		: errorMessage(message)

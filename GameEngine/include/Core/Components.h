@@ -5,11 +5,9 @@
 
 #include "Core/Vector2.h"
 
-namespace GameEngine 
+namespace MultipixelEngine 
 {
-	using namespace Core;
-
-	namespace Scene 
+	namespace Core 
 	{
 		struct Component 
 		{

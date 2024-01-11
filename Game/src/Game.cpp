@@ -4,8 +4,8 @@
 #include <stdafx.h>
 
 #include "Game.h"
-#include "ScenePlay.h"
-#include "ScenePlay2.h"
+#include "Scenes/ScenePlay.h"
+#include "Scenes/ScenePlay2.h"
 
 void Init() { Game::Init(); }
 
@@ -15,11 +15,11 @@ namespace Game
 	{
 		std::shared_ptr<ScenePlay> a = std::make_shared<ScenePlay>();
 		std::shared_ptr<ScenePlay2> b = std::make_shared<ScenePlay2>();
-		//a.reset(new ScenePlay);
-		//b.reset(new ScenePlay2);
+		a.reset(new ScenePlay);
+		b.reset(new ScenePlay2);
 
-		//GameEngine::GameEngineManager::Instance().addScene(a);
-		//GameEngine::GameEngineManager::Instance().addScene(b);
-		GameEngine::GameEngineManager::Instance().changeScene(0);
+		MultipixelEngine::GameEngine::Instance().addScene(a);
+		MultipixelEngine::GameEngine::Instance().addScene(b);
+		MultipixelEngine::GameEngine::Instance().changeScene(0);
 	}
 }

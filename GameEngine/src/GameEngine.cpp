@@ -3,15 +3,15 @@
 //---------------------------------------------------------------------------------
 #include "stdafx.h"
 
-#include "GameEngineManager.h"
+#include "GameEngine.h"
 
-namespace GameEngine 
+namespace MultipixelEngine 
 {
-	GameEngineManager::GameEngineManager() {
+	GameEngine::GameEngine() {
 		init();
 	}
 
-	void GameEngineManager::init()
+	void GameEngine::init()
 	{
 		// TODO: Load assets
 
@@ -22,7 +22,7 @@ namespace GameEngine
 		glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_EXIT);
 	}
 	
-	void GameEngineManager::update(float deltaTime)
+	void GameEngine::update(float deltaTime)
 	{
 		if (crashed)
 		{
@@ -44,23 +44,23 @@ namespace GameEngine
 		{
 			if (App::IsKeyPressed(key.first))
 			{
-				if (previousKeyStates[key.first] != Actions::PRESS)
+				if (previousKeyStates[key.first] != Events::PRESS)
 				{
-					currentSceneObject->doAction(Actions::Action(key.second, Actions::PRESS));
-					previousKeyStates[key.first] = Actions::PRESS;
+					currentSceneObject->doAction(Events::Action(key.second, Events::PRESS));
+					previousKeyStates[key.first] = Events::PRESS;
 				}
 			}
 			else {
 				// Prevent release event from occuring on first frame
-				if (previousKeyStates[key.first] == Actions::NONE)
+				if (previousKeyStates[key.first] == Events::NONE)
 				{
 					continue;
 				}
 
-				if (previousKeyStates[key.first] != Actions::RELEASE)
+				if (previousKeyStates[key.first] != Events::RELEASE)
 				{
-					currentSceneObject->doAction(Actions::Action(key.second, Actions::RELEASE));
-					previousKeyStates[key.first] = Actions::RELEASE;
+					currentSceneObject->doAction(Events::Action(key.second, Events::RELEASE));
+					previousKeyStates[key.first] = Events::RELEASE;
 				}
 			}
 		}
@@ -68,7 +68,7 @@ namespace GameEngine
 		currentSceneObject->update();
 	}
 
-	void GameEngineManager::render()
+	void GameEngine::render()
 	{
 		if (crashed)
 		{
@@ -78,7 +78,7 @@ namespace GameEngine
 		getCurrentScene()->sRender();
 	}
 
-	void GameEngineManager::crash(std::string message)
+	void GameEngine::crash(std::string message)
 	{
 		if (crashed) return;
 
@@ -88,44 +88,44 @@ namespace GameEngine
 		glutMainLoop();
 	}
 
-	void GameEngineManager::crash()
+	void GameEngine::crash()
 	{
 		crashed = true;
 		crashScene = std::make_shared<ErrorScene>("");
 	}
 
-	void GameEngineManager::addScene(std::shared_ptr<Scene::AbstractScene> sceneToAdd)
+	void GameEngine::addScene(std::shared_ptr<Scene::AbstractScene> sceneToAdd)
 	{
 		// TODO: GET NEW KEY
 		sceneMap[0] = (sceneToAdd);
 	}
 
-	void GameEngineManager::changeScene(int sceneID)
+	void GameEngine::changeScene(int sceneID)
 	{
 		currentSceneIndex = sceneID;
 		getCurrentScene()->init();
 	}
 
-	std::shared_ptr<Scene::AbstractScene> GameEngineManager::getCurrentScene()
+	std::shared_ptr<Scene::AbstractScene> GameEngine::getCurrentScene()
 	{
 		ASSERT(sceneMap.count(currentSceneIndex), "Could not get current scene");
 		return sceneMap[currentSceneIndex];
 	}
 
-	void GameEngineManager::registerAction(int actionKey) 
+	void GameEngine::registerAction(int actionKey)
 	{
-		previousKeyStates[actionKey] = Actions::NONE;
+		previousKeyStates[actionKey] = Events::NONE;
 	}
 }
 
 void Update(float deltaTime) 
 { 
-	GameEngine::GameEngineManager::Instance().update(deltaTime);
+	MultipixelEngine::GameEngine::Instance().update(deltaTime);
 }
 
 void Render() 
 { 
-	GameEngine::GameEngineManager::Instance().render();
+	MultipixelEngine::GameEngine::Instance().render();
 }
 
 void Shutdown()

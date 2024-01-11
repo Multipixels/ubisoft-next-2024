@@ -2,7 +2,7 @@
 // Vector2.h
 //---------------------------------------------------------------------------------
 #pragma once
-namespace GameEngine 
+namespace MultipixelEngine 
 {
 	namespace Core 
 	{
