@@ -14,6 +14,12 @@ namespace GameEngine
 	void GameEngineManager::init()
 	{
 		// TODO: Load assets
+
+
+
+		// Reverts option set in main.cpp,
+		// Fixes a bug with the assert macro in which it will return to the code that would have caused an exception.
+		glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_EXIT);
 	}
 	
 	void GameEngineManager::update(float deltaTime)
