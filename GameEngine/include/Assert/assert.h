@@ -3,6 +3,7 @@
 #include <cassert>
 
 #include "Scene/ErrorScene.h"
+#include "GameEngine.h"
 
 //-------------------------------------------------------------------------------------------
 // #define ASSERT(condition, message, ...)

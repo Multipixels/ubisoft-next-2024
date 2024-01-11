@@ -112,7 +112,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)GameEngine\external\glut\include;$(SolutionDir)GameEngine\external\stb_image;$(SolutionDir)GameEngine\include\Actions;$(SolutionDir)GameEngine\include\Core;$(SolutionDir)GameEngine\include\App;$(SolutionDir)GameEngine\include\Scene;$(SolutionDir)GameEngine\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GameEngine\external\glut\include;$(SolutionDir)GameEngine\external\stb_image;$(SolutionDir)GameEngine\include\Events;$(SolutionDir)GameEngine\include\Core;$(SolutionDir)GameEngine\include\App;$(SoltuionDir)GameEngine\include\Assert;$(SolutionDir)GameEngine\include\Scene;$(SolutionDir)GameEngine\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>

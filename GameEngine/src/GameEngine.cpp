@@ -7,15 +7,15 @@
 
 namespace MultipixelEngine 
 {
-	GameEngine::GameEngine() {
+	GameEngine::GameEngine() 
+		: sceneManager(SceneManager::Instance())
+	{
 		init();
 	}
 
 	void GameEngine::init()
 	{
 		// TODO: Load assets
-
-
 
 		// Reverts option set in main.cpp,
 		// Fixes a bug with the assert macro in which it will return to the code that would have caused an exception.
@@ -30,12 +30,12 @@ namespace MultipixelEngine
 			return;
 		}
 
-		if (currentSceneIndex == -1)
+		if (sceneManager.getCurrentSceneIndex() == -1)
 		{
 			return;
 		}
 
-		auto currentSceneObject = getCurrentScene();
+		auto currentSceneObject = sceneManager.getCurrentScene();
 		auto sceneActionMap = currentSceneObject->getActionMap();
 
 		// For every desired key, check if it's pressed
@@ -75,7 +75,7 @@ namespace MultipixelEngine
 			crashScene->sRender();
 			return;
 		}
-		getCurrentScene()->sRender();
+		sceneManager.getCurrentScene()->sRender();
 	}
 
 	void GameEngine::crash(std::string message)
@@ -92,24 +92,6 @@ namespace MultipixelEngine
 	{
 		crashed = true;
 		crashScene = std::make_shared<ErrorScene>("");
-	}
-
-	void GameEngine::addScene(std::shared_ptr<Scene::AbstractScene> sceneToAdd)
-	{
-		// TODO: GET NEW KEY
-		sceneMap[0] = (sceneToAdd);
-	}
-
-	void GameEngine::changeScene(int sceneID)
-	{
-		currentSceneIndex = sceneID;
-		getCurrentScene()->init();
-	}
-
-	std::shared_ptr<Scene::AbstractScene> GameEngine::getCurrentScene()
-	{
-		ASSERT(sceneMap.count(currentSceneIndex), "Could not get current scene");
-		return sceneMap[currentSceneIndex];
 	}
 
 	void GameEngine::registerAction(int actionKey)

@@ -204,6 +204,7 @@
     <ClInclude Include="include\App\SimpleSprite.h" />
     <ClInclude Include="include\Scene\ErrorScene.h" />
     <ClInclude Include="include\Scene\AbstractScene.h" />
+    <ClInclude Include="include\Scene\SceneManager.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
     <ClInclude Include="include\Core\Vector2.h" />
@@ -229,6 +230,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Scene\SceneManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

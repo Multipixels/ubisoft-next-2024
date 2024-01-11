@@ -80,7 +80,7 @@ namespace Game
 		b = action.toString();
 		if (action.name() == "UP" && action.type() == PRESS)
 		{
-			MultipixelEngine::GameEngine::Instance().changeScene(0);
+			SceneManager::Instance().changeScene(0);
 		}
 	}
 }

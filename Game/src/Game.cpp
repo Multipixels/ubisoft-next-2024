@@ -18,8 +18,8 @@ namespace Game
 		a.reset(new ScenePlay);
 		b.reset(new ScenePlay2);
 
-		MultipixelEngine::GameEngine::Instance().addScene(a);
-		MultipixelEngine::GameEngine::Instance().addScene(b);
-		MultipixelEngine::GameEngine::Instance().changeScene(0);
+		SceneManager::Instance().addScene(a);
+		SceneManager::Instance().addScene(b);
+		SceneManager::Instance().changeScene(0);
 	}
 }

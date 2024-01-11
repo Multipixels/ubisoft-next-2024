@@ -24,6 +24,7 @@
 // Scene Library
 #include "Scene/AbstractScene.h"
 #include "Scene/ErrorScene.h"
+#include "Scene/SceneManager.h"
 
 namespace MultipixelEngine 
 {
@@ -31,14 +32,12 @@ namespace MultipixelEngine
 	{
 		GameEngine();
 
-		std::map<int, std::shared_ptr<Scene::AbstractScene>> sceneMap;
 		std::map<int, Events::ActionType> previousKeyStates;
-		int currentSceneIndex = -1;
+		SceneManager& sceneManager;
 
 		bool crashed = false;
 		std::string crashMessage = "";
 		std::shared_ptr<ErrorScene> crashScene;
-		;
 	public:
 		static GameEngine& Instance()
 		{
@@ -53,9 +52,6 @@ namespace MultipixelEngine
 		void crash(std::string message);
 		void crash();
 
-		void addScene(std::shared_ptr<Scene::AbstractScene> sceneToAdd);
-		std::shared_ptr<Scene::AbstractScene> getCurrentScene();
-		void changeScene(int sceneID);
 		void registerAction(int actionKey);
 	};
 }
