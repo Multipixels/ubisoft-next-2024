@@ -8,17 +8,21 @@
 
 #include "Scene/AbstractScene.h"
 
+#define MAX_SCENES 10
+
 namespace MultipixelEngine
 {
 	namespace Scene
 	{
 		class SceneManager
 		{
-			SceneManager();
-
+			int currentSceneIndex = -1;
+			int numOfScenes = 0;
 			std::map<int, std::shared_ptr<Scene::AbstractScene>> sceneMap;
 
-			int currentSceneIndex = -1;
+			SceneManager();
+
+			size_t getNextSceneId();
 		public:
 			static SceneManager& Instance()
 			{

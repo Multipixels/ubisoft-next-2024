@@ -9,6 +9,8 @@
 
 void Init() { Game::Init(); }
 
+using namespace MultipixelEngine::Scene;
+
 namespace Game 
 {
 	void Init()

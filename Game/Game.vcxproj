@@ -112,14 +112,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)GameEngine\external\glut\include;$(SolutionDir)GameEngine\external\stb_image;$(SolutionDir)GameEngine\include\Events;$(SolutionDir)GameEngine\include\Core;$(SolutionDir)GameEngine\include\App;$(SoltuionDir)GameEngine\include\Assert;$(SolutionDir)GameEngine\include\Scene;$(SolutionDir)GameEngine\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GameEngine\external\glut\include;$(SolutionDir)GameEngine\external\stb_image;$(ProjectDir)include\Scenes;$(ProjectDir)include;$(SolutionDir)GameEngine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)GameEngine\lib\x64\Debug;$(SolutionDir)GameEngine\external\glut\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>freeglut.lib;dxguid.lib;dsound.lib;GameEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib;dxguid.lib;dsound.lib;MultipixelEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
       <AdditionalOptions>/ENTRY:"wWinMainCRTStartup" /VERBOSE %(AdditionalOptions)</AdditionalOptions>
@@ -147,7 +147,7 @@ xcopy "$(SolutionDir)GameEngine\lib\x64\Debug\*.dll" "$(OutputPath)" /Y
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)GameEngine\lib\x64\Release;$(SolutionDir)GameEngine\external\glut\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>freeglut.lib;dxguid.lib;dsound.lib;GameEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freeglut.lib;dxguid.lib;dsound.lib;MultipixelEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/ENTRY:"wWinMainCRTStartup" %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
@@ -170,6 +170,11 @@ xcopy "$(SolutionDir)GameEngine\lib\x64\Release\*.dll" "$(OutputPath)" /Y
     <ClInclude Include="include\Scenes\ScenePlay.h" />
     <ClInclude Include="include\Scenes\ScenePlay2.h" />
     <ClInclude Include="include\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameEngine\GameTest.vcxproj">
+      <Project>{7a12010b-608e-4fbe-9089-494dbb9078a1}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
