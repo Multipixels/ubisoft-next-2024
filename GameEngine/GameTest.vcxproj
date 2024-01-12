@@ -23,7 +23,7 @@
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GameTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>GameEngine</ProjectName>
+    <ProjectName>MultipixelEngine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -189,28 +189,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="external\stb_image\stb_image.h" />
-    <ClInclude Include="include\Actions\Action.h" />
     <ClInclude Include="include\App\app.h" />
     <ClInclude Include="include\App\AppSettings.h" />
-    <ClInclude Include="include\GameEngineManager.h" />
+    <ClInclude Include="include\Assert\assert.h" />
+    <ClInclude Include="include\Core\Components.h" />
+    <ClInclude Include="include\Core\GameObject.h" />
+    <ClInclude Include="include\Core\GameObjectManager.h" />
+    <ClInclude Include="include\Core\GameObjectMemoryPool.h" />
+    <ClInclude Include="include\Events\Action.h" />
+    <ClInclude Include="include\GameEngine.h" />
     <ClInclude Include="include\App\main.h" />
     <ClInclude Include="include\App\SimpleController.h" />
     <ClInclude Include="include\App\SimpleSound.h" />
     <ClInclude Include="include\App\SimpleSprite.h" />
-    <ClInclude Include="include\Scene\Components.h" />
-    <ClInclude Include="include\Scene\Entity.h" />
-    <ClInclude Include="include\Scene\EntityManager.h" />
-    <ClInclude Include="include\Scene\Scene.h" />
+    <ClInclude Include="include\Scene\ErrorScene.h" />
+    <ClInclude Include="include\Scene\AbstractScene.h" />
+    <ClInclude Include="include\Scene\SceneManager.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
     <ClInclude Include="include\Core\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\stb_image\stb_image.cpp" />
-    <ClCompile Include="src\Actions\Action.cpp" />
-    <ClCompile Include="src\GameEngineManager.cpp" />
-    <ClCompile Include="src\Scene\Scene.cpp" />
-    <ClInclude Include="include\Scene\EntityMemoryPool.h" />
+    <ClCompile Include="src\Core\GameObject.cpp" />
+    <ClCompile Include="src\Core\GameObjectManager.cpp" />
+    <ClCompile Include="src\Core\GameObjectMemoryPool.cpp" />
+    <ClCompile Include="src\Events\Action.cpp" />
+    <ClCompile Include="src\GameEngine.cpp" />
+    <ClCompile Include="src\Scene\ErrorScene.cpp" />
+    <ClCompile Include="src\Scene\AbstractScene.cpp" />
     <ClCompile Include="src\App\app.cpp" />
     <ClCompile Include="src\Core\Vector2.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -223,9 +230,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Scene\Entity.cpp" />
-    <ClCompile Include="src\Scene\EntityManager.cpp" />
-    <ClCompile Include="src\Scene\EntityMemoryPool.cpp" />
+    <ClCompile Include="src\Scene\SceneManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

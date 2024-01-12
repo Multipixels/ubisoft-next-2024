@@ -1,37 +1,39 @@
 //---------------------------------------------------------------------------------
-// Scene.h
+// AbstractScene.h
 //---------------------------------------------------------------------------------
 #pragma once
 
 #include <string>
 #include <map>
 
-#include "Scene/EntityManager.h"
-#include "Actions/Action.h"
+#include "Core/GameObjectManager.h"
+#include "Events/Action.h"
 
-namespace GameEngine 
+namespace MultipixelEngine 
 {
+	using namespace Core;
+	using namespace Events;
+
 	namespace Scene 
 	{
-		using namespace Actions;
-
-		class Scene 
+		class AbstractScene
 		{
 			int currentFrame = 0;
 			bool paused = false;
 
 			std::map<int, std::string> actionMap;
 		protected:
-			EntityManager entityManager;
+			GameObjectManager gameObjectManager;
 		public:
-			Scene();
+			AbstractScene();
 
+			virtual void init() = 0;
 			virtual void update() = 0;
 			virtual void sDoAction(Action action) = 0;
 			virtual void sRender() = 0;
 
 			std::map<int, std::string> getActionMap();
-			void registerAction(int keyID, const std::string actionName);
+			void registerAction(int keyId, const std::string actionName);
 			void doAction(Action action);
 		};
 	}

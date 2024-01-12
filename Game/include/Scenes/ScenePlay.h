@@ -3,13 +3,14 @@
 //------------------------------------------------------------------------
 #pragma once
 
-#include <GameEngineManager.h>
+#include <GameEngine.h>
 
 namespace Game
 {
-	using namespace GameEngine::Scene;
+	using namespace MultipixelEngine::Events;
+	using namespace MultipixelEngine::Scene;
 
-	class ScenePlay : public Scene 
+	class ScenePlay : public AbstractScene
 	{
 		void init();
 
