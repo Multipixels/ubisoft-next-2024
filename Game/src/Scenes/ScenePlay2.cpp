@@ -14,6 +14,7 @@ namespace Game
 	std::string b = "";
 
 	ScenePlay2::ScenePlay2()
+		: inputMessage(gameObjectManager.createGameObject())
 	{
 	}
 
@@ -29,50 +30,21 @@ namespace Game
 		e.addComponent<CBoundingBox>();
 		e.getComponent<CBoundingBox>().size = Vector2(100, 100);
 		e.getComponent<CTransform>().position = Vector2(700, 500);
+
+		inputMessage.addComponent<CTransform>();
+		inputMessage.addComponent<UIText>();
+		inputMessage.getComponent<CTransform>().position = Vector2(500, 500);
+		inputMessage.getComponent<UIText>().text = b;
 	}
 
 	void ScenePlay2::update()
 	{
-	
+		inputMessage.getComponent<UIText>().text = b;
 	}
 
 	void ScenePlay2::sPhysics()
 	{
 
-	}
-
-	void ScenePlay2::sRender()
-	{
-		App::Print(500, 500, b.c_str(), 0.5f, 0.5f, 0.5f);
-
-		for (auto entity : gameObjectManager.getGameObjects())
-		{
-			if (entity.hasComponent<CTransform>() && entity.hasComponent<CBoundingBox>())
-			{
-				auto& transform = entity.getComponent<CTransform>();
-				auto& bb = entity.getComponent<CBoundingBox>();
-
-				App::DrawLine(
-					transform.position.x - bb.size.x / 2, transform.position.y - bb.size.y / 2,
-					transform.position.x - bb.size.x / 2, transform.position.y + bb.size.y / 2,
-					1, 1, 1);
-
-				App::DrawLine(
-					transform.position.x - bb.size.x / 2, transform.position.y - bb.size.y / 2,
-					transform.position.x + bb.size.x / 2, transform.position.y - bb.size.y / 2,
-					1, 1, 1);
-
-				App::DrawLine(
-					transform.position.x + bb.size.x / 2, transform.position.y + bb.size.y / 2,
-					transform.position.x - bb.size.x / 2, transform.position.y + bb.size.y / 2,
-					1, 1, 1);
-
-				App::DrawLine(
-					transform.position.x + bb.size.x / 2, transform.position.y + bb.size.y / 2,
-					transform.position.x + bb.size.x / 2, transform.position.y - bb.size.y / 2,
-					1, 1, 1);
-			}
-		}
 	}
 
 	void ScenePlay2::sDoAction(Action action)

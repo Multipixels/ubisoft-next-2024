@@ -19,7 +19,8 @@ namespace MultipixelEngine
 			std::vector<CTransform>,
 			std::vector<CBoundingBox>,
 			std::vector<CBoundingCircle>,
-			std::vector<CRigidbody>
+			std::vector<CRigidbody>,
+			std::vector<UIText>
 		> ComponentContainer;
 
 		class GameObjectMemoryPool

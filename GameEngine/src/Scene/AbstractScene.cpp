@@ -15,6 +15,11 @@ namespace MultipixelEngine
 		{
 		}
 
+		std::vector<GameObject>& AbstractScene::getSceneGameObjects()
+		{
+			return gameObjectManager.getGameObjects();
+		};
+
 		std::map<int, std::string> AbstractScene::getActionMap()
 		{
 			return actionMap;

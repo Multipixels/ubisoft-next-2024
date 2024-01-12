@@ -3,6 +3,8 @@
 //---------------------------------------------------------------------------------
 #pragma once
 
+#include <string>
+
 #include "Core/Vector2.h"
 
 namespace MultipixelEngine 
@@ -13,6 +15,11 @@ namespace MultipixelEngine
 		{
 		public:
 			bool exists = false;
+		};
+
+		struct UIComponent : Component
+		{
+
 		};
 
 		struct CTransform : Component 
@@ -45,8 +52,24 @@ namespace MultipixelEngine
 		{
 			bool isKinematic = false;
 			bool useGravity = false;
-
 			Vector2 velocity = Vector2();
+
+			CRigidbody() = default;
+		};
+
+		struct UIText : UIComponent
+		{
+			std::string text;
+
+			UIText()
+				: text()
+			{
+			};
+
+			UIText(std::string inText)
+				: text(inText)
+			{
+			}
 		};
 	}
 }

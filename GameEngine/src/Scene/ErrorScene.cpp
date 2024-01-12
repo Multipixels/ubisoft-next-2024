@@ -3,19 +3,25 @@
 //------------------------------------------------------------------------
 #include "stdafx.h"
 
-#include "App/app.h"
 #include "Scene/ErrorScene.h"
+#include "GameEngine.h"
 
 namespace MultipixelEngine
 {
 	ErrorScene::ErrorScene(std::string message)
 		: errorMessage(message)
 	{
-		
+		init();
 	}
 
 	void ErrorScene::init()
 	{
+		GameObject uiErrorMessage = gameObjectManager.createGameObject();
+		uiErrorMessage.addComponent<CTransform>();
+		uiErrorMessage.addComponent<UIText>();
+
+		uiErrorMessage.getComponent<CTransform>().position = Vector2(20, 40);
+		uiErrorMessage.getComponent<UIText>().text = errorMessage;
 	}
 
 	void ErrorScene::update()
@@ -27,10 +33,4 @@ namespace MultipixelEngine
 	{
 
 	};
-
-	void ErrorScene::sRender()
-	{
-		App::Print(20, 40, "Error", 1, 1, 1);
-		App::Print(20, 20, errorMessage.c_str(), 1, 1, 1);
-	}
 }

@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "Core/GameObject.h"
+#include "Core/GameObjectMemoryPool.h"
 
 namespace MultipixelEngine 
 {

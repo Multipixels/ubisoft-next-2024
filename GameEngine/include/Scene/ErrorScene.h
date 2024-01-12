@@ -16,7 +16,6 @@ namespace MultipixelEngine
 		ErrorScene(std::string message);
 
 		void init();
-		void sRender();
 		void sDoAction(Action action);
 		void update();
 	};

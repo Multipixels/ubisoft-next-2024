@@ -5,9 +5,6 @@
 
 #include <memory>
 
-// App Library
-#include "App/app.h"
-
 // Assert Library
 #include "Assert/assert.h"
 
@@ -16,6 +13,7 @@
 #include "Core/GameObject.h"
 #include "Core/GameObjectManager.h"
 #include "Core/GameObjectMemoryPool.h"
+#include "Core/RenderSystem.h"
 #include "Core/Vector2.h"
 
 // Events Library
@@ -33,8 +31,9 @@ namespace MultipixelEngine
 	{
 		GameEngine();
 
-		SceneManager& sceneManager;
 		EventManager& eventManager;
+		SceneManager& sceneManager;
+		RenderSystem& renderSystem;
 
 		bool crashed = false;
 		std::string crashMessage = "";

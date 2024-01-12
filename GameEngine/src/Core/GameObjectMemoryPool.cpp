@@ -15,17 +15,20 @@ namespace MultipixelEngine
 			std::vector<CBoundingBox> cBoundingBoxVector(maxGameObjects);
 			std::vector<CBoundingCircle> cBoundingCircleVector(maxGameObjects);
 			std::vector<CRigidbody> cRigidbodyVector(maxGameObjects);
+			std::vector<UIText> uiTextVector(maxGameObjects);
 
-			cTransformVector.reserve(maxGameObjects);
+			/*cTransformVector.reserve(maxGameObjects);
 			cBoundingBoxVector.reserve(maxGameObjects);
 			cBoundingCircleVector.reserve(maxGameObjects);
 			cRigidbodyVector.reserve(maxGameObjects);
+			uiText.reserve(maxGameObjects);*/
 
 			gameObjects = std::make_tuple(
 				cTransformVector,
 				cBoundingBoxVector,
 				cBoundingCircleVector,
-				cRigidbodyVector
+				cRigidbodyVector,
+				uiTextVector
 			);
 
 			activeGameObjects = std::vector<bool>(maxGameObjects);
@@ -45,6 +48,7 @@ namespace MultipixelEngine
 			std::get<std::vector<CBoundingBox>>(gameObjects).insert(std::get<std::vector<CBoundingBox>>(gameObjects).begin(), gameObjectId, CBoundingBox());
 			std::get<std::vector<CBoundingCircle>>(gameObjects).insert(std::get<std::vector<CBoundingCircle>>(gameObjects).begin(), gameObjectId, CBoundingCircle());
 			std::get<std::vector<CRigidbody>>(gameObjects).insert(std::get<std::vector<CRigidbody>>(gameObjects).begin(), gameObjectId, CRigidbody());
+			std::get<std::vector<UIText>>(gameObjects).insert(std::get<std::vector<UIText>>(gameObjects).begin(), gameObjectId, UIText());
 
 			activeGameObjects[gameObjectId] = true;
 

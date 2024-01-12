@@ -4,12 +4,14 @@
 #include "stdafx.h"
 
 #include "GameEngine.h"
+#include "App/app.h"
 
 namespace MultipixelEngine 
 {
 	GameEngine::GameEngine() 
 		: sceneManager(SceneManager::Instance()),
-		  eventManager(EventManager::Instance())
+		  eventManager(EventManager::Instance()),
+		  renderSystem(RenderSystem::Instance())
 	{
 		init();
 	}
@@ -32,7 +34,6 @@ namespace MultipixelEngine
 		}
 
 		EventManager::Instance().detectEvent();
-
 		sceneManager.getCurrentScene()->update();
 	}
 
@@ -40,19 +41,19 @@ namespace MultipixelEngine
 	{
 		if (crashed)
 		{
-			crashScene->sRender();
+			renderSystem.render(crashScene);
 			return;
 		}
-		sceneManager.getCurrentScene()->sRender();
+
+		renderSystem.render(sceneManager.getCurrentScene());
 	}
 
 	void GameEngine::crash(std::string message)
 	{
 		if (crashed) return;
-
+		render();
 		crashed = true;
 		crashScene = std::make_shared<ErrorScene>(message);
-		crashScene->sRender();
 		glutMainLoop();
 	}
 

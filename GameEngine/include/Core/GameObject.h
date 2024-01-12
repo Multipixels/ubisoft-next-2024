@@ -5,10 +5,13 @@
 
 #include "Core/Components.h"
 
+
 namespace MultipixelEngine 
 {
 	namespace Core 
 	{
+		class GameObjectMemoryPool;
+
 		class GameObject
 		{
 			friend class GameObjectMemoryPool;
