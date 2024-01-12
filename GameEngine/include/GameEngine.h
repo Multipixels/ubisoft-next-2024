@@ -20,6 +20,7 @@
 
 // Events Library
 #include "Events/Action.h"
+#include "Events/EventManager.h"
 
 // Scene Library
 #include "Scene/AbstractScene.h"
@@ -32,8 +33,8 @@ namespace MultipixelEngine
 	{
 		GameEngine();
 
-		std::map<int, Events::ActionType> previousKeyStates;
 		SceneManager& sceneManager;
+		EventManager& eventManager;
 
 		bool crashed = false;
 		std::string crashMessage = "";
@@ -51,14 +52,12 @@ namespace MultipixelEngine
 
 		void crash(std::string message);
 		void crash();
-
-		void registerAction(int actionKey);
 	};
 }
 
 
 
-// Defined in the global namespace to then redirect to GameEngine namespace.
+// Defined in the global namespace to then redirect to game engine's and game's namespace.
 
 void Init();
 void Update(float deltaTime);

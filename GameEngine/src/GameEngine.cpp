@@ -8,7 +8,8 @@
 namespace MultipixelEngine 
 {
 	GameEngine::GameEngine() 
-		: sceneManager(SceneManager::Instance())
+		: sceneManager(SceneManager::Instance()),
+		  eventManager(EventManager::Instance())
 	{
 		init();
 	}
@@ -30,42 +31,9 @@ namespace MultipixelEngine
 			return;
 		}
 
-		if (sceneManager.getCurrentSceneIndex() == -1)
-		{
-			return;
-		}
+		EventManager::Instance().detectEvent();
 
-		auto currentSceneObject = sceneManager.getCurrentScene();
-		auto sceneActionMap = currentSceneObject->getActionMap();
-
-		// For every desired key, check if it's pressed
-		// Trigger an Action if state of key press changes.
-		for (auto key : sceneActionMap) 
-		{
-			if (App::IsKeyPressed(key.first))
-			{
-				if (previousKeyStates[key.first] != Events::PRESS)
-				{
-					currentSceneObject->doAction(Events::Action(key.second, Events::PRESS));
-					previousKeyStates[key.first] = Events::PRESS;
-				}
-			}
-			else {
-				// Prevent release event from occuring on first frame
-				if (previousKeyStates[key.first] == Events::NONE)
-				{
-					continue;
-				}
-
-				if (previousKeyStates[key.first] != Events::RELEASE)
-				{
-					currentSceneObject->doAction(Events::Action(key.second, Events::RELEASE));
-					previousKeyStates[key.first] = Events::RELEASE;
-				}
-			}
-		}
-
-		currentSceneObject->update();
+		sceneManager.getCurrentScene()->update();
 	}
 
 	void GameEngine::render()
@@ -92,11 +60,6 @@ namespace MultipixelEngine
 	{
 		crashed = true;
 		crashScene = std::make_shared<ErrorScene>("");
-	}
-
-	void GameEngine::registerAction(int actionKey)
-	{
-		previousKeyStates[actionKey] = Events::NONE;
 	}
 }
 

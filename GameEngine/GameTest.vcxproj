@@ -197,6 +197,7 @@
     <ClInclude Include="include\Core\GameObjectManager.h" />
     <ClInclude Include="include\Core\GameObjectMemoryPool.h" />
     <ClInclude Include="include\Events\Action.h" />
+    <ClInclude Include="include\Events\EventManager.h" />
     <ClInclude Include="include\GameEngine.h" />
     <ClInclude Include="include\App\main.h" />
     <ClInclude Include="include\App\SimpleController.h" />
@@ -215,6 +216,7 @@
     <ClCompile Include="src\Core\GameObjectManager.cpp" />
     <ClCompile Include="src\Core\GameObjectMemoryPool.cpp" />
     <ClCompile Include="src\Events\Action.cpp" />
+    <ClCompile Include="src\Events\EventManager.cpp" />
     <ClCompile Include="src\GameEngine.cpp" />
     <ClCompile Include="src\Scene\ErrorScene.cpp" />
     <ClCompile Include="src\Scene\AbstractScene.cpp" />

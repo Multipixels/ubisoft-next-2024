@@ -33,6 +33,15 @@ namespace MultipixelEngine
 			void addScene(std::shared_ptr<Scene::AbstractScene> sceneToAdd);
 			std::shared_ptr<Scene::AbstractScene> getCurrentScene();
 			int getCurrentSceneIndex();
+
+
+			//-------------------------------------------------------------------------------------------
+			// void SceneManager::changeScene(int sceneID)
+			//-------------------------------------------------------------------------------------------
+			// Changes the scene.
+			// Note: changing to a scene does not reset the scene. Any values stored in the scene will persist if scene is revisted.
+			// If you want the scene to reset entirely, set up your `init()` to reset things as necessary. 
+			//-------------------------------------------------------------------------------------------
 			void changeScene(int sceneID);
 		};
 	}
